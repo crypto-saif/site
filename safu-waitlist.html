@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safu Wallet - AI-Powered Multi-Chain Wallet</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .feature {
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        .feature-text {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .form-container {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .form-title {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        input[type="email"]::placeholder {
+            color: #666;
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        .privacy-note {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 15px;
+        }
+        .privacy-note a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8b5cf6;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: #666;
+        }
+        .chains {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .chain {
+            background: rgba(255,255,255,0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        #success {
+            display: none;
+            color: #4ade80;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔐</div>
+        <span class="badge">✨ AI-Powered</span>
+        <h1>Safu Wallet</h1>
+        <p class="subtitle">Self-custody crypto wallet with AI assistance.<br>Multi-chain. Secure. Smart.</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-text">AI-Powered</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-text">Self-Custody</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⛓️</div>
+                <div class="feature-text">Multi-Chain</div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <p class="form-title">Get early access</p>
+            <form id="signup-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Join Waitlist</button>
+                <p class="privacy-note">We respect your privacy. <a href="privacy.html">Privacy Policy</a></p>
+            </form>
+            <div id="success">✓ You're on the list! We'll be in touch soon.</div>
+        </div>
+
+        <div class="chains">
+            <span class="chain">Solana</span>
+            <span class="chain">Stellar</span>
+            <span class="chain">NEAR</span>
+        </div>
+
+        <div class="social-proof">
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Networks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">AI</div>
+                <div class="stat-label">Assisted</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Self-Custody</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const button = this.querySelector('button');
+            button.textContent = 'Joining...';
+            button.disabled = true;
+            
+            // TODO: Replace with Brevo form endpoint
+            // For now, just show success
+            setTimeout(() => {
+                document.getElementById('signup-form').style.display = 'none';
+                document.getElementById('success').style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
